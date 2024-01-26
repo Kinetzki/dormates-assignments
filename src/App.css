@@ -22,6 +22,9 @@ h1 {
 .profile {
   height: 290px;
   width: 290px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .works-container h2 {
@@ -49,5 +52,27 @@ h1 {
 @media screen and (max-width: 767px ){
   .works-container {
     flex-direction: column;
+  }
+}
+
+.name {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(16, 147, 199, 0.199);
+  text-align: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-radius: 20px 20px 0 0;
+  animation: show 0.2s ease-in;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

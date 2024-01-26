@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { assignment, weekdays, pics } from "./assigns";
+import Profile from "./Profile";
 
 function App() {
   const [currentDay, setCurrentDay] = useState("");
@@ -24,13 +25,11 @@ function App() {
           Object.keys(assignment[currentDay]).map((work, i) => {
             return (
               <div key={i} className="works">
-                <div className="profile">
-                  <img
-                    src={pics[assignment[currentDay][work]["name"]]}
-                    alt=""
-                  />
-                </div>
-                <h2 className="title">{work}</h2>
+                <Profile
+                  pic={pics[assignment[currentDay][work]["name"]]}
+                  work={work}
+                  name={assignment[currentDay][work]["name"]}
+                />
               </div>
             );
           })}
